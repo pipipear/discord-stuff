@@ -1,6 +1,6 @@
 if (message.content.startsWith(prefix + "flood")) {
   if (message.member.hasPermission("ADMINISTRATOR")) {
-    if (!message.content.substring(prefix.length).match(/\d+/)) return message.channel.send('You have to specify how much you want to flood').catch(err => stupiderror = err);
+    if (!message.content.substring(prefix.length).match(/\d+/)) return message.channel.send(new Discord.MessageEmbed().setDescription('You have to specify how much you want to flood').setColor('ff5858')).catch(err => stupiderror = err);
     var floodcount = Math.ceil(message.content.substring(prefix.length).match(/\d+/) / 2) * 2;
     var floodstate = 0;
     var category = message.guild.channels.cache.find(cat => cat.name === 'F=L=O=O=D');
